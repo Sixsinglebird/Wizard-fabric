@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 public class wizardItems {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("wizardfabric");
@@ -20,12 +21,12 @@ public class wizardItems {
     public static final Item wand = registerItem("wand", new Wand(new FabricItemSettings()));
 
     private static Item registerItem(String name,  Item item){
-        LOGGER.info(String.format("%s registered as %s",item,name));
+        LOGGER.info(String.format("Turning %s into %s",item,name));
         return Registry.register(Registries.ITEM,new Identifier("wizardfabric",name),item);
     };
 
     public static void addItemsToItemGroup(){
-        addToItemGroup(ItemGroups.TOOLS, wand);
+        addToItemGroup(ItemGroups.COMBAT, wand);
     }
 
     public static void addToItemGroup(RegistryKey<ItemGroup> group, Item item) {
@@ -33,7 +34,7 @@ public class wizardItems {
     }
 
     public static void registerModItems() {
-        LOGGER.info(String.format("Registering mod items for %s","wizardfabric"));
+        LOGGER.info(String.format("Registering mod items for WizardFabric"));
         addItemsToItemGroup();
     }
 
