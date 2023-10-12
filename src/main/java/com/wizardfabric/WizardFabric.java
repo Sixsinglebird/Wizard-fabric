@@ -2,20 +2,13 @@ package com.wizardfabric;
 
 import com.wizardfabric.item.*;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class WizardFabric implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod id as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("wizardfabric");
 
-	public static final Wand wand = new Wand(new FabricItemSettings());
 
 	@Override
 	public void onInitialize() {
@@ -23,7 +16,7 @@ public class WizardFabric implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		LOGGER.info("Hello Fabric world!");
-		Registry.register(Registries.ITEM,new Identifier("wizardfabric","wand"),wand);
+		wizardItems.registerModItems();
 
 	}
 }
