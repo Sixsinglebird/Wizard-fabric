@@ -1,4 +1,4 @@
-package com.wizardfabric;
+package com.wizardfabric.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;

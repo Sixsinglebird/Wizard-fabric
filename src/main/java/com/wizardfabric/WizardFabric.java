@@ -1,5 +1,6 @@
 package com.wizardfabric;
 
+import com.wizardfabric.item.*;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.registry.Registries;
@@ -7,9 +8,6 @@ import net.minecraft.registry.Registry;
 import net.minecraft.util.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-
-
 
 public class WizardFabric implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
