@@ -1,6 +1,7 @@
-package com.wizardfabric.item;
+package com.wizardfabric;
 
 import com.wizardfabric.WizardFabric;
+import com.wizardfabric.item.Wand;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -16,13 +17,13 @@ import org.slf4j.LoggerFactory;
 
 public class wizardItems {
 
-    public static final Logger LOGGER = LoggerFactory.getLogger("wizardfabric");
+    public static final Logger LOGGER = LoggerFactory.getLogger(WizardFabric.MOD_ID);
 
     public static final Item wand = registerItem("wand", new Wand(new FabricItemSettings()));
 
     private static Item registerItem(String name,  Item item){
         LOGGER.info(String.format("Turning %s into %s",item,name));
-        return Registry.register(Registries.ITEM,new Identifier("wizardfabric",name),item);
+        return Registry.register(Registries.ITEM,new Identifier(WizardFabric.MOD_ID,name),item);
     };
 
     public static void addItemsToItemGroup(){
@@ -34,7 +35,7 @@ public class wizardItems {
     }
 
     public static void registerModItems() {
-        LOGGER.info(String.format("Registering mod items for WizardFabric"));
+        LOGGER.info(String.format("Registering mod items for %s", WizardFabric.MOD_ID));
         addItemsToItemGroup();
     }
 
