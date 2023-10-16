@@ -12,14 +12,12 @@
     "E": {
       "item": "minecraft:emerald"
     },
-  "S": {
-    "item": "minecraft:stick"
-  }
+    "S": {
+      "item": "minecraft:stick"
+    }
   },
   "result": {
-    "item": "wizardfabric:item/wand",
+    "item": "wizardfabric:wand",
     "count": 1
   }
 }
-
-

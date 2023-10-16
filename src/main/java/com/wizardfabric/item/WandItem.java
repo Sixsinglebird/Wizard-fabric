@@ -74,10 +74,8 @@ public class WandItem extends ToolItem {
             double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
             FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, 5);
-
-
+            fireballEntity.setPos(fireballEntity.getX() + x, fireballEntity.getY() + y, fireballEntity.getZ() + z);
             world.spawnEntity(fireballEntity);
-
             return TypedActionResult.success(user.getStackInHand(hand));
         }
 
