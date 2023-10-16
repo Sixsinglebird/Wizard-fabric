@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 
 public class WizardItems {
 
-    public static final Item wand = registerItem("wand", new WandItem(new FabricItemSettings()));
+    public static final Item wand = registerItem("wand", new WandItem(new FabricItemSettings(),1.0));
 
     private static Item registerItem(String name,  Item item){
         WizardFabric.LOGGER.info(String.format("Turning %s into %s",item,name));

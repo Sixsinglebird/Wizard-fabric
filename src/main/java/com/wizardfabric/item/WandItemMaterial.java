@@ -4,10 +4,11 @@ import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
 public class WandItemMaterial implements ToolMaterial {
+    public static int DURABILITY = 500;
 
     @Override
     public int getDurability() {
-        return 0;
+        return DURABILITY;
     }
 
     @Override
@@ -19,6 +20,7 @@ public class WandItemMaterial implements ToolMaterial {
     public float getAttackDamage() {
         return 0;
     }
+
 
     @Override
     public int getMiningLevel() {
