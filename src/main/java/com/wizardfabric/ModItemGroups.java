@@ -18,8 +18,6 @@ public class ModItemGroups{
 
             })).build());
 
-
-
     public static void registerItemGroups() {
         WizardFabric.LOGGER.info(String.format("Registering item groups for %s", WizardFabric.MOD_ID));
     }

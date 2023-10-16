@@ -26,6 +26,10 @@ public class WandItem extends ToolItem {
         this.MAGIC_STRENGTH = level;
     }
 
+    public int getMagicStrength() {
+        return this.MAGIC_STRENGTH;
+    }
+
     /**
      * Called when the player uses (or starts using) the item.
      * The use action, by default, is bound to the right mouse button.
