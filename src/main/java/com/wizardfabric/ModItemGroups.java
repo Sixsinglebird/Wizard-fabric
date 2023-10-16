@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.MinecartItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -17,11 +18,6 @@ public class ModItemGroups{
 
             })).build());
 
-    public static final ItemGroup wand_ammo_group = Registry.register(Registries.ITEM_GROUP, new Identifier(WizardFabric.MOD_ID, "wand_ammo"), FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wand_ammo"))
-            .icon(() -> new ItemStack(WizardItems.wand)).entries(((displayContext, entries) -> {
-                entries.add(Items.FIRE_CHARGE);
-
-            })).build());
 
 
     public static void registerItemGroups() {
