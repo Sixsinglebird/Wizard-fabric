@@ -1,6 +1,6 @@
 package com.wizardfabric;
 
-import com.wizardfabric.item.Wand;
+import com.wizardfabric.item.WandItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -14,7 +14,7 @@ import net.minecraft.util.Identifier;
 
 public class WizardItems {
 
-    public static final Item wand = registerItem("wand", new Wand(new FabricItemSettings()));
+    public static final Item wand = registerItem("wand", new WandItem(new FabricItemSettings()));
 
     private static Item registerItem(String name,  Item item){
         WizardFabric.LOGGER.info(String.format("Turning %s into %s",item,name));
