@@ -59,12 +59,28 @@ public class WandItem extends ToolItem {
         user.getStackInHand(hand).damage(1, user, (p) -> {
             p.sendToolBreakStatus(hand);
         });
-        if (user.experienceLevel > 1.1) {
+
+        if (user.experienceLevel >= 1) {
             user.experienceLevel -= 1;
-            WizardFabric.LOGGER.info(String.valueOf(user.getPos().));
-//            FireballEntity fireballEntity = new FireballEntity(world, (PlayerEntity)user, f, g, h, getMagicStrength());
+
+            float pitch = user.getPitch();
+            float yaw = user.getYaw();
+
+            float pitchRad = (float)Math.toRadians(pitch);
+            float yawRad = (float)Math.toRadians(yaw);
+
+            double x = -Math.sin(yawRad) * Math.cos(pitchRad);
+            double y = -Math.sin(pitchRad);
+            double z = Math.cos(yawRad) * Math.cos(pitchRad);
+
+            FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, 5);
+
+
+            world.spawnEntity(fireballEntity);
+
             return TypedActionResult.success(user.getStackInHand(hand));
         }
+
         return TypedActionResult.pass(user.getStackInHand(hand));
     }
 
