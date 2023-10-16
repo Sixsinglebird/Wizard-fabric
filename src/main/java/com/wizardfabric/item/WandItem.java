@@ -16,21 +16,17 @@ import net.minecraft.world.World;
 
 public class WandItem extends ToolItem {
 
-    private final int MAGIC_STRENGTH = 2;
+    private int MAGIC_STRENGTH = 2;
 
     public WandItem( Item.Settings settings, double attackSpeed) {
         super(new WandItemMaterial(), settings.maxDamage(WandItemMaterial.DURABILITY).fireproof());;
-
-        ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
-
-        builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double)this.MAGIC_STRENGTH, EntityAttributeModifier.Operation.ADDITION));
-
-        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)attackSpeed, EntityAttributeModifier.Operation.ADDITION));
-
-        Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers = builder.build();
     }
 
-    public float getMagicStrength() {
+    public void setMagicStrength(int level) {
+        this.MAGIC_STRENGTH = level;
+    }
+
+    public int getMagicStrength() {
         return this.MAGIC_STRENGTH;
     }
 
@@ -60,7 +56,7 @@ public class WandItem extends ToolItem {
             p.sendToolBreakStatus(hand);
         });
 
-        if (user.experienceLevel >= 1) {
+        if (user.experienceLevel >= 1 || user.getAbilities().creativeMode) {
             user.experienceLevel -= 1;
 
             float pitch = user.getPitch();
@@ -69,13 +65,14 @@ public class WandItem extends ToolItem {
             float pitchRad = (float)Math.toRadians(pitch);
             float yawRad = (float)Math.toRadians(yaw);
 
-            double x = -Math.sin(yawRad) * Math.cos(pitchRad);
-            double y = -Math.sin(pitchRad);
-            double z = Math.cos(yawRad) * Math.cos(pitchRad);
+            double velocityX = -Math.sin(yawRad) * Math.cos(pitchRad);
+            double velocityY = -Math.sin(pitchRad);
+            double velocityZ = Math.cos(yawRad) * Math.cos(pitchRad);
 
-            FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, 5);
-            fireballEntity.setPos(fireballEntity.getX() + x, fireballEntity.getY() + y, fireballEntity.getZ() + z);
+            FireballEntity fireballEntity = new FireballEntity(world, user, velocityX, velocityY, velocityZ, MAGIC_STRENGTH);
+
             world.spawnEntity(fireballEntity);
+
             return TypedActionResult.success(user.getStackInHand(hand));
         }
 

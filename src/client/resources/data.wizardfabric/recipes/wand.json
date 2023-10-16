@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "combat",
   "pattern": [
     " IE",
     " SI",
@@ -8,17 +7,19 @@
   ],
   "key": {
     "I": {
-      "item": "minecraft:iron_ingot"
+      "tag": "minecraft:iron_ingot"
     },
     "E": {
       "item": "minecraft:emerald"
     },
-    "S": {
-      "item": "minecraft:stick"
-    }
+  "S": {
+    "item": "minecraft:stick"
+  }
   },
   "result": {
     "item": "wizardfabric:wand",
     "count": 1
   }
 }
+
+
