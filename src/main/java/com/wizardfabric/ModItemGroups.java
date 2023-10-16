@@ -11,13 +11,13 @@ import net.minecraft.util.Identifier;
 
 public class ModItemGroups{
 
-    public static final ItemGroup wand_group = Registry.register(Registries.ITEM_GROUP, new Identifier(WizardFabric.MOD_ID, "wands"), FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wamds"))
+    public static final ItemGroup wand_group = Registry.register(Registries.ITEM_GROUP, new Identifier(WizardFabric.MOD_ID, "wands"), FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wands"))
             .icon(() -> new ItemStack(WizardItems.wand)).entries(((displayContext, entries) -> {
                 entries.add(WizardItems.wand);
 
             })).build());
 
-    public static final ItemGroup wand_ammo_group = Registry.register(Registries.ITEM_GROUP, new Identifier(WizardFabric.MOD_ID, "wand-ammo"), FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wand-ammo"))
+    public static final ItemGroup wand_ammo_group = Registry.register(Registries.ITEM_GROUP, new Identifier(WizardFabric.MOD_ID, "wand_ammo"), FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wand_ammo"))
             .icon(() -> new ItemStack(WizardItems.wand)).entries(((displayContext, entries) -> {
                 entries.add(Items.FIRE_CHARGE);
 
