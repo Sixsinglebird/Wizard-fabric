@@ -1,3 +1,7 @@
 {
-  "item.wizardfabric.wand": "wand"
+  "item.wizardfabric.wand": "Basic Wand",
+
+  "itemgroup.wands": "Wands",
+  "itemgroup.wand_ammo": "Wand Ammo"
+
 }

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " IE",
+    " SI",
+    "S  "
+  ],
+  "key": {
+    "I": {
+      "tag": "minecraft:iron_ingot"
+    },
+    "E": {
+      "item": "minecraft:emerald"
+    },
+  "S": {
+    "item": "minecraft:stick"
+  }
+  },
+  "result": {
+    "item": "tutorial:custom_item",
+    "count": 4
+  }
+}
+
+
