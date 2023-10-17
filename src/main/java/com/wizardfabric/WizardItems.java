@@ -37,9 +37,4 @@ public class WizardItems {
         addItemsToItemGroup();
     }
 
-//    public static void registerModRecipes(Identifier recipeId) {
-//        WizardFabric.LOGGER.info(String.format("Registering mod recipes for %s", WizardFabric.MOD_ID));
-//        Registry.register(Registries., recipeId, new ShapedRecipe.Serializer());
-//
-//    }
 }

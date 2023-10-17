@@ -2,12 +2,15 @@ package com.wizardfabric.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
+import com.wizardfabric.WizardItems;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.item.*;
+import net.minecraft.recipe.Recipe;
+import net.minecraft.recipe.RecipeManager;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -71,7 +74,7 @@ public class WandItem extends ToolItem {
             double y = -Math.sin(pitchRad);
             double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
-            FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, 5);
+            FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, MAGIC_STRENGTH);
             fireballEntity.setPos(fireballEntity.getX() + x, fireballEntity.getY() + y, fireballEntity.getZ() + z);
             world.spawnEntity(fireballEntity);
             return TypedActionResult.success(user.getStackInHand(hand));

@@ -20,7 +20,6 @@ public class WizardFabric implements ModInitializer {
 		LOGGER.info("Gathering Enchantments...");
 		WizardItems.registerModItems();
 		ModItemGroups.registerItemGroups();
-		Identifier recipeId = new Identifier("wizardfabric", "wand_recipe");
 
 	}
 }
