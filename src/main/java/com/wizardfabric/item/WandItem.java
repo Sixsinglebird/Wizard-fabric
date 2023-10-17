@@ -2,8 +2,6 @@ package com.wizardfabric.item;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.wizardfabric.WizardFabric;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -60,8 +58,8 @@ public class WandItem extends ToolItem {
             p.sendToolBreakStatus(hand);
         });
 
-        if (user.experienceLevel >= 1) {
-            user.experienceLevel -= 1;
+        if (user.experienceLevel >= 1 ||  user.getAbilities().creativeMode) {
+            if (!user.getAbilities().creativeMode) user.experienceLevel -= 1;
 
             float pitch = user.getPitch();
             float yaw = user.getYaw();
@@ -73,7 +71,7 @@ public class WandItem extends ToolItem {
             double y = -Math.sin(pitchRad);
             double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
-            FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, 5);
+            FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, MAGIC_STRENGTH);
             fireballEntity.setPos(fireballEntity.getX() + x, fireballEntity.getY() + y, fireballEntity.getZ() + z);
             world.spawnEntity(fireballEntity);
             return TypedActionResult.success(user.getStackInHand(hand));
