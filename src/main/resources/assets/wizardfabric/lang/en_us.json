@@ -1,5 +1,7 @@
 {
   "item.wizardfabric.wand": "Basic Wand",
+  "item.wizardfabric.wand_staff": "Basic Wand Staff",
+  "item.wizardfabric.force_wand_head": "Force Wand Head",
 
   "itemgroup.wands": "Wands"
 
