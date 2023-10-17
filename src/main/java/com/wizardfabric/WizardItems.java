@@ -1,10 +1,13 @@
 package com.wizardfabric;
 
 import com.wizardfabric.item.*;
+import com.wizardfabric.block.*;
 import com.wizardfabric.item.WandItem;
 import com.wizardfabric.item.WandStaffItem;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemGroups;
@@ -21,7 +24,8 @@ public class WizardItems {
     public static final Item forceWandHead = registerItem("force_wand_head", new ForceWandHeadItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
     public static final Item iceWandHead = registerItem("ice_wand_head", new IceWandHeadItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
     public static final Item fireWandHead = registerItem("fire_wand_head", new FireWandHeadItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
-    public static final Item wandCraftingBench = registerItem("wand_crafting_bench", new WandCraftingBenchItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
+    public static final Block wandCraftingBench = registerBlock("wand_crafting_bench", new WandCraftingBenchItem(settings), ItemGroups.INGREDIENTS);
+
 
 
     private static Item registerItem(String name,  Item item, RegistryKey<ItemGroup> group){
@@ -30,13 +34,21 @@ public class WizardItems {
         return Registry.register(Registries.ITEM,new Identifier(WizardFabric.MOD_ID,name),item);
     };
 
+    private static Block registerBlock(String name, Block block, RegistryKey<ItemGroup> group){
+        WizardFabric.LOGGER.info(String.format("Turning %s into %s",block,name));
+
+        return Registry.register(Registries.BLOCK,new Identifier(WizardFabric.MOD_ID,name),block);
+    };
+
     private static void addItemsToItemGroup(RegistryKey<ItemGroup> group, Item item){
         addToItemGroup(group, item);
     }
 
+
     private static void addToItemGroup(RegistryKey<ItemGroup> group, Item item) {
         ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
     }
+
 
     public static void registerModItems() {
         WizardFabric.LOGGER.info(String.format("Registering mod items for %s", WizardFabric.MOD_ID));
