@@ -10,7 +10,10 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
+import net.minecraft.recipe.ShapedRecipe;
+import net.minecraft.util.Identifier;
 
+import net.minecraft.recipe.RecipeSerializer;
 
 public class WizardItems {
 
@@ -34,4 +37,9 @@ public class WizardItems {
         addItemsToItemGroup();
     }
 
+//    public static void registerModRecipes(Identifier recipeId) {
+//        WizardFabric.LOGGER.info(String.format("Registering mod recipes for %s", WizardFabric.MOD_ID));
+//        Registry.register(Registries., recipeId, new ShapedRecipe.Serializer());
+//
+//    }
 }
