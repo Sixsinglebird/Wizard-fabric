@@ -60,8 +60,8 @@ public class WandItem extends ToolItem {
             p.sendToolBreakStatus(hand);
         });
 
-        if (user.experienceLevel >= 1) {
-            user.experienceLevel -= 1;
+        if (user.experienceLevel >= 1 ||  user.getAbilities().creativeMode) {
+            if (!user.getAbilities().creativeMode) user.experienceLevel -= 1;
 
             float pitch = user.getPitch();
             float yaw = user.getYaw();
