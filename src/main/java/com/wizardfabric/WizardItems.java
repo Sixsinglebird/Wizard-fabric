@@ -12,7 +12,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.recipe.ShapedRecipe;
 import net.minecraft.util.Identifier;
-
+import net.minecraft.registry.Registry;
 import net.minecraft.recipe.RecipeSerializer;
 
 public class WizardItems {
@@ -37,9 +37,11 @@ public class WizardItems {
         addItemsToItemGroup();
     }
 
-//    public static void registerModRecipes(Identifier recipeId) {
-//        WizardFabric.LOGGER.info(String.format("Registering mod recipes for %s", WizardFabric.MOD_ID));
-//        Registry.register(Registries., recipeId, new ShapedRecipe.Serializer());
-//
-//    }
+    // method to register recipes
+    public static void registerRecipes() {
+        // register a recipe for the wand found in resources/data/wizardfabric/recipes/WandItem.json
+        Registry.register(Registries.RECIPE_SERIALIZER, new Identifier(WizardFabric.MOD_ID, "resources/data/wizardfabric/recipes/WandItem.json"), new ShapedRecipe.Serializer());
+    }
+
+
 }
