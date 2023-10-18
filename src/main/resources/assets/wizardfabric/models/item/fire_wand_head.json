@@ -2,7 +2,8 @@
   "credit": "AFS - Sixsinglebird",
   "texture_size": [32, 32],
   "textures": {
-    "0": "wizardfabric:item/wand_head_blazite"
+    "0": "wizardfabric:item/wand_head_blazite",
+    "particle": "wizardfabric:item/wand_head_blazite"
   },
   "elements": [
     {

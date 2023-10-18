@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "": {
+      "model": "wizardfabric:block/wand_workbench"
+    }
+  }
+
+}
