@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "wizards",
+  "key": {
+    "+": {
+      "item": "minecraft:heart_of_the_sea"
+    },
+    "#": {
+      "item": "minecraft:ice"
+    }
+  },
+  "pattern": [
+    "###",
+    "#+#",
+    "###"
+  ],
+  "result": {
+    "item": "wizardfabric:ice_wand_head"
+  },
+  "show_notification": true
+}
