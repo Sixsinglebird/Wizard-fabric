@@ -13,6 +13,8 @@ public class ModItemGroups{
     public static final ItemGroup wand_group = Registry.register(Registries.ITEM_GROUP, new Identifier(WizardFabric.MOD_ID, "wands"), FabricItemGroup.builder().displayName(Text.translatable("itemgroup.wizards"))
             .icon(() -> new ItemStack(WizardItems.wand)).entries(((displayContext, entries) -> {
                 entries.add(WizardItems.wand);
+                entries.add(WizardItems.iceWand);
+                entries.add(WizardItems.fireWand);
                 entries.add(WizardItems.wandStaff);
                 entries.add(WizardItems.forceWandHead);
                 entries.add(WizardItems.iceWandHead);
