@@ -15,10 +15,10 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class WandCraftingBenchItem extends Block {
+public class WandCraftingBenchBlock extends Block {
     private static final Text TITLE = Text.translatable("container.crafting");
-    public WandCraftingBenchItem(Settings settings) {
-        super(settings);
+    public WandCraftingBenchBlock() {
+        super(Settings.copy(net.minecraft.block.Blocks.CRAFTING_TABLE));
     }
 
     @Override

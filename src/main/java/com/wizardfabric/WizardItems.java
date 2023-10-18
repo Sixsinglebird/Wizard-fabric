@@ -24,7 +24,7 @@ public class WizardItems {
     public static final Item forceWandHead = registerItem("force_wand_head", new ForceWandHeadItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
     public static final Item iceWandHead = registerItem("ice_wand_head", new IceWandHeadItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
     public static final Item fireWandHead = registerItem("fire_wand_head", new FireWandHeadItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
-    public static final Block wandCraftingBench = registerBlock("wand_crafting_bench", new WandCraftingBenchItem(settings), ItemGroups.INGREDIENTS);
+    public static final Block wandCraftingBench = registerBlock("wand_crafting_bench", new WandCraftingBenchBlock(), ItemGroups.INGREDIENTS);
 
 
 
