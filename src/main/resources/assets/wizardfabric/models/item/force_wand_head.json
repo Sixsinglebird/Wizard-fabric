@@ -2,7 +2,8 @@
 	"credit": "AFS - Sixsinglebird",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "wizardfabric:item/wand_head_emerald"
+		"0": "wizardfabric:item/wand_head_emerald",
+		"particle": "wizardfabric:item/wand_head_emerald"
 	},
 	"elements": [
 		{

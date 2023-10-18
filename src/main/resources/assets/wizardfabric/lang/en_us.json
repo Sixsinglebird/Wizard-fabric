@@ -4,6 +4,8 @@
   "item.wizardfabric.force_wand_head": "Force Wand Head",
   "item.wizardfabric.ice_wand_head": "Ice Wand Head",
   "item.wizardfabric.fire_wand_head": "Fire Wand Head",
+  "item.wizardfabric.wand_workbench": "Wand Crafting Bench",
+  "block.wizardfabric.wand_workbench": "Wand Crafting Bench",
 
 
   "itemgroup.wands": "Wands"

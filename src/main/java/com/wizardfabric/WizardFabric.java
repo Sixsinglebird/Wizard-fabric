@@ -1,10 +1,10 @@
 package com.wizardfabric;
-import net.minecraft.util.Identifier;
+
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.minecraft.recipe.ShapedRecipe;
-import net.minecraft.item.Items;
+
+
 public class WizardFabric implements ModInitializer {
 	public static final String MOD_ID = "wizardfabric";
 	// This logger is used to write text to the console and the log file.
@@ -19,6 +19,7 @@ public class WizardFabric implements ModInitializer {
 		// Proceed with mild caution.
 		LOGGER.info("Gathering Enchantments...");
 		WizardItems.registerModItems();
+		WizardBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
 
 	}
