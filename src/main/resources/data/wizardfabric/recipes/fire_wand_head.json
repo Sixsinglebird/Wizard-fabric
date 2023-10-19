@@ -6,16 +6,19 @@
       "item": "wizardfabric:wand_head"
     },
     "#": {
-      "item": "minecraft:ice"
+      "item": "minecraft:netherite_scrap"
+    },
+    "-": {
+      "item": "minecraft:nether_star"
     }
   },
   "pattern": [
     "###",
     "#+#",
-    "###"
+    "#-#"
   ],
   "result": {
-    "item": "wizardfabric:ice_wand_head"
+    "item": "wizardfabric:fire_wand_head"
   },
   "show_notification": true
 }

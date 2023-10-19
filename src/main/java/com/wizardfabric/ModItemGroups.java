@@ -19,7 +19,7 @@ public class ModItemGroups{
                 entries.add(WizardItems.forceWandHead);
                 entries.add(WizardItems.iceWandHead);
                 entries.add(WizardItems.fireWandHead);
-                entries.add(WizardBlocks.wandWorkBench);
+//                entries.add(WizardBlocks.wandWorkBench);
 
             })).build());
 

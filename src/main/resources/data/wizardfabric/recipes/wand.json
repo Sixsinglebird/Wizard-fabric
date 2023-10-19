@@ -1,21 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "equipment",
+  "category": "wizards",
   "key": {
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "E": {
-      "item": "minecraft:emerald"
+    "+": {
+      "item": "wizardfabric:wand_head"
     },
     "#": {
-      "item": "minecraft:stick"
+      "item": "minecraft:wand_shaft"
     }
   },
   "pattern": [
-    " E ",
-    "I#I",
-    " # "
+    "+",
+    "#"
   ],
   "result": {
     "item": "wizardfabric:wand"

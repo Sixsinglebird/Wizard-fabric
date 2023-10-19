@@ -3,19 +3,18 @@
   "category": "wizards",
   "key": {
     "+": {
-      "item": "wizardfabric:wand_head"
+      "item": "wizardfabric:ice_wand_head"
     },
     "#": {
-      "item": "minecraft:ice"
+      "item": "minecraft:wand_shaft"
     }
   },
   "pattern": [
-    "###",
-    "#+#",
-    "###"
+    "+",
+    "#"
   ],
   "result": {
-    "item": "wizardfabric:ice_wand_head"
+    "item": "wizardfabric:ice_wand"
   },
   "show_notification": true
 }

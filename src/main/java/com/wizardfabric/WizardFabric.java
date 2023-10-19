@@ -19,7 +19,7 @@ public class WizardFabric implements ModInitializer {
 		// Proceed with mild caution.
 		LOGGER.info("Gathering Enchantments...");
 		WizardItems.registerModItems();
-		WizardBlocks.registerModBlocks();
+//		WizardBlocks.registerModBlocks();
 		ModItemGroups.registerItemGroups();
 
 	}
