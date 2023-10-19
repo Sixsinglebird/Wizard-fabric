@@ -1,7 +1,9 @@
 package com.wizardfabric.item;
 
 import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
+import net.minecraft.block.BlockState;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
@@ -11,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ToolItem;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class FireWandItem extends ToolItem {
@@ -24,6 +27,20 @@ public class FireWandItem extends ToolItem {
 
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)attackSpeed, EntityAttributeModifier.Operation.ADDITION));
 
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        stack.damage(5, attacker, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+        return true;
+    }
+
+    @Override
+    public boolean postMine(ItemStack stack, World world, BlockState state, BlockPos pos, LivingEntity miner) {
+        if (state.getHardness(world, pos) != 0.0f) {
+            stack.damage(10, miner, e -> e.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
+        }
+        return true;
     }
 
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
@@ -45,8 +62,9 @@ public class FireWandItem extends ToolItem {
             double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
             FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, MAGIC_STRENGTH);
-            fireballEntity.setPos(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            fireballEntity.setPos(user.getX(), user.getY() + user.getEyeHeight(user.getPose()) + 0.5, user.getZ());
             world.spawnEntity(fireballEntity);
+
             return TypedActionResult.success(user.getStackInHand(hand));
         }
 
