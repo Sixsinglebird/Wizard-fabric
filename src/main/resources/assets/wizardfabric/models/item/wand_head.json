@@ -5,6 +5,9 @@
 		"0": "wizardfabric:item/wand_head_emerald",
 		"particle": "wizardfabric:item/wand_head_emerald"
 	},
+	"display": {
+		"scale": [10.0,10.0,10.0]
+	},
 	"elements": [
 		{
 			"from": [8, 7, 6],
