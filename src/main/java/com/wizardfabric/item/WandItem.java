@@ -1,12 +1,13 @@
 package com.wizardfabric.item;
 
 import com.google.common.collect.ImmutableMultimap;
-import com.google.common.collect.Multimap;
+import com.wizardfabric.entity.WandProjectileEntity;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.FireballEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
@@ -16,14 +17,13 @@ public class WandItem extends ToolItem {
 
     private final int MAGIC_STRENGTH = 2;
 
-    public WandItem( Item.Settings settings, double attackSpeed) {
+    public WandItem( Item.Settings settings) {
         super(new WandItemMaterial(), settings.maxDamage(WandItemMaterial.DURABILITY).fireproof());;
 
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
 
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double)this.MAGIC_STRENGTH, EntityAttributeModifier.Operation.ADDITION));
 
-        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)attackSpeed, EntityAttributeModifier.Operation.ADDITION));
 
     }
 
@@ -50,9 +50,11 @@ public class WandItem extends ToolItem {
             double y = -Math.sin(pitchRad);
             double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
-//            FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, MAGIC_STRENGTH);
-//            fireballEntity.setPos(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
-//            world.spawnEntity(fireballEntity);
+
+            WandProjectileEntity wandProjectileEntity = new WandProjectileEntity(EntityType.ARROW, x, y, z, world);
+            wandProjectileEntity.setVelocity(x, y, z);
+            wandProjectileEntity.setPos(user.getX(), user.getY() + user.getEyeHeight(user.getPose()), user.getZ());
+            world.spawnEntity(wandProjectileEntity);
             return TypedActionResult.success(user.getStackInHand(hand));
         }
 

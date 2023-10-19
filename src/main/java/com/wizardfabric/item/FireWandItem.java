@@ -18,14 +18,12 @@ import net.minecraft.world.World;
 
 public class FireWandItem extends ToolItem {
     private final int MAGIC_STRENGTH = 2;
-    public FireWandItem(Settings settings, double attackSpeed) {
+    public FireWandItem(Settings settings) {
         super(new WandItemMaterial(), settings.maxDamage(WandItemMaterial.DURABILITY).fireproof());;
 
         ImmutableMultimap.Builder<EntityAttribute, EntityAttributeModifier> builder = ImmutableMultimap.builder();
 
         builder.put(EntityAttributes.GENERIC_ATTACK_DAMAGE, new EntityAttributeModifier(ATTACK_DAMAGE_MODIFIER_ID, "Weapon modifier", (double)this.MAGIC_STRENGTH, EntityAttributeModifier.Operation.ADDITION));
-
-        builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)attackSpeed, EntityAttributeModifier.Operation.ADDITION));
 
     }
 
