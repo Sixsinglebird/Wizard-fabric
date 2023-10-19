@@ -13,12 +13,11 @@
     }
   },
   "pattern": [
-    " E ",
     "I#I",
     " # "
   ],
   "result": {
-    "item": "wizardfabric:wand_shaft"
+    "item": "wizardfabric:wand_staff"
   },
   "show_notification": true
 }

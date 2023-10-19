@@ -1,12 +1,12 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "wizards",
+  "type": "wizardfabric:crafting_shaped",
+  "category": "combat",
   "key": {
     "+": {
       "item": "wizardfabric:fire_wand_head"
     },
     "#": {
-      "item": "minecraft:wand_shaft"
+      "item": "wizardfabric:wand_staff"
     }
   },
   "pattern": [
