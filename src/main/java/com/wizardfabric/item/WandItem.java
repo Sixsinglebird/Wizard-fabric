@@ -25,34 +25,13 @@ public class WandItem extends ToolItem {
 
         builder.put(EntityAttributes.GENERIC_ATTACK_SPEED, new EntityAttributeModifier(ATTACK_SPEED_MODIFIER_ID, "Weapon modifier", (double)attackSpeed, EntityAttributeModifier.Operation.ADDITION));
 
-        Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers = builder.build();
     }
 
     public float getMagicStrength() {
         return this.MAGIC_STRENGTH;
     }
 
-    /**
-     * Called when the player uses (or starts using) the item.
-     * The use action, by default, is bound to the right mouse button.
-     * This method checks the player's hunger when the item is a food, and will
-     * {@linkplain TypedActionResult#pass pass} in all other cases by default.
-     *
-     * <p>If the item {@linkplain #getMaxUseTime can be used for multiple ticks}, then
-     * this will only be called when the player starts using it. After that,
-     * {@link #usageTick} is called every tick until the player {@linkplain #finishUsing
-     * finishes using the item}.
-     *
-     * <p>This method is called on both the logical client and logical server, so take caution when overriding this method.
-     * The logical side can be checked using {@link net.minecraft.world.World#isClient() world.isClient()}.
-     *
-     * @return a typed action result that specifies whether using the item was successful.
-     * The action result contains the new item stack that the player's hand will be set to.
-     *
-     * @param world the world the item was used in
-     * @param user the player who used the item
-     * @param hand the hand used
-     */
+
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         user.getStackInHand(hand).damage(1, user, (p) -> {
             p.sendToolBreakStatus(hand);
