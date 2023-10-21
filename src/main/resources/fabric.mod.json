@@ -1,15 +1,14 @@
 {
 	"schemaVersion": 1,
 	"id": "wizardfabric",
-	"version": "${version}",
+	"version": "1.0.0",
 	"name": "WizardFabric",
-	"description": "Wizards... In Minecraft!!",
+	"description": "WizardFabric - Unleash Your Inner Wizard!\n\nIntroducing WizardFabric, a magical addition to the world of Minecraft that brings the power of wands into your hands, using existing in-game assets. Crafted with precision and enchantment, this mod offers a whole new dimension to your Minecraft experience.\n\nKey Features:\n\n\uD83E\uDE84 Craft Your Magic: Create your wand using Minecraft's familiar materials. The wand shaft is made from sticks and iron ingots, while the head is an exquisite combination of a Nether Star, Blaze Powder, and Netherite scraps. Unleash the elements and bend them to your will!\n\n\uD83D\uDD25 Fire Wand: As of now, WizardFabric offers the fiery Fire Wand. This blazing wand allows you to harness the power of fire, igniting your surroundings and keeping those pesky mobs at bay.\n\n\uD83E\uDDD9\u200D♂\uFE0F More Wands to Come: Stay tuned as we work our magical arts to bring you more enchanting wands in the future. Your wizarding arsenal is bound to grow with exciting new possibilities.\n\nCompatibility:\n\n\uD83C\uDF1F Minecraft 1.20.2: WizardFabric is ready to harmonize with the latest version of Minecraft, ensuring that you can weave your magic in the most up-to-date environment.\n\n\uD83E\uDDE9 FabricLoader 0.14.22: Our mod seamlessly integrates with FabricLoader, enhancing your gameplay without a hitch.\n\n☕ Java 17: WizardFabric is powered by Java 17, bringing modern performance and reliability to your Minecraft adventures.\n\nDepends On:\n\n\uD83D\uDEE0\uFE0F Fabric API: WizardFabric relies on the trusted foundation of Fabric API to ensure compatibility and smooth operation.\n\nDive into the world of Minecraft like never before with WizardFabric. Craft, cast, and conquer with your wand of choice. The path to wizardry is yours to explore.\n\nAre you ready to become a master of magic? Download WizardFabric and begin your enchanting journey today!",
 	"authors": [
 		"Sixsinglebird"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/wizardfabric"
 	},
 	"license": "MIT",
 	"icon": "assets/wizardfabric/icon.png",
@@ -22,13 +21,6 @@
 			"com.wizardfabric.WizardFabricClient"
 		]
 	},
-	"mixins": [
-		"wizardfabric.mixins.json",
-		{
-			"config": "wizardfabric.client.mixins.json",
-			"environment": "client"
-		}
-	],
 	"depends": {
 		"fabricloader": ">=0.14.22",
 		"minecraft": "~1.20.2",
@@ -36,6 +28,6 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"another-mod": "https://www.curseforge.com/minecraft/mc-mods/fabric-api/files"
 	}
 }

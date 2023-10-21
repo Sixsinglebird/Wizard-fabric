@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "wizards",
+  "category": "equipment",
   "key": {
-    "+": {
-      "item": "wizardfabric:wand_head"
+    "-": {
+      "item": "minecraft:blaze_powder"
     },
     "#": {
       "item": "minecraft:netherite_scrap"
     },
-    "-": {
+    "+": {
       "item": "minecraft:nether_star"
     }
   },

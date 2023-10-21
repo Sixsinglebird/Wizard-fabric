@@ -8,7 +8,7 @@ import net.minecraft.recipe.Ingredient;
 public class WandItemMaterial implements ToolMaterial {
     public static int DURABILITY = 500;
     public static int ENCHANTABILITY = 5;
-    public static Item REPAIR_ITEM = Items.STICK;
+    public static Item REPAIR_ITEM = null;
 
     public static int MINING_LEVEL = 0;
 

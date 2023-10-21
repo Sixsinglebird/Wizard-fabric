@@ -41,8 +41,9 @@ public class FireWandItem extends ToolItem {
         return true;
     }
 
+
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        user.getStackInHand(hand).damage(1, user, (p) -> {
+        user.getStackInHand(hand).damage(10, user, (p) -> {
             p.sendToolBreakStatus(hand);
         });
 
@@ -60,7 +61,7 @@ public class FireWandItem extends ToolItem {
             double z = Math.cos(yawRad) * Math.cos(pitchRad);
 
             FireballEntity fireballEntity = new FireballEntity(world, user, x, y, z, MAGIC_STRENGTH);
-            fireballEntity.setPos(user.getX(), user.getY() + user.getEyeHeight(user.getPose()) + 0.5, user.getZ());
+            fireballEntity.setPos(user.getX(), user.getY() + user.getEyeHeight(user.getPose())+0.15, user.getZ());
             world.spawnEntity(fireballEntity);
 
             return TypedActionResult.success(user.getStackInHand(hand));
