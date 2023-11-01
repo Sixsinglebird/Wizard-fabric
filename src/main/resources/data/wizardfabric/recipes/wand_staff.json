@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "I": {
+      "item": "minecraft:iron_ingot"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "I#I",
+    " # "
+  ],
+  "result": {
+    "item": "wizardfabric:wand_staff"
+  },
+  "show_notification": true
+}

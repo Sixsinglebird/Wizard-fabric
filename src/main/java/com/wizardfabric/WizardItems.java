@@ -16,8 +16,8 @@ import net.minecraft.util.Identifier;
 
 public class WizardItems {
 
-    public static final Item wand = registerItem("wand", new WandItem(new FabricItemSettings(),1.0), ItemGroups.COMBAT);
-    public static final Item iceWand = registerItem("ice_wand", new IceWandItem(new FabricItemSettings(),1.0), ItemGroups.COMBAT);
+    public static final Item wand = registerItem("wand", new WandItem(new FabricItemSettings()), ItemGroups.COMBAT);
+    public static final Item iceWand = registerItem("ice_wand", new IceWandItem(new FabricItemSettings()), ItemGroups.COMBAT);
     public static final Item fireWand = registerItem("fire_wand", new FireWandItem(new FabricItemSettings()), ItemGroups.COMBAT);
     public static final Item wandStaff = registerItem("wand_staff", new WandStaffItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
     public static final Item forceWandHead = registerItem("wand_head", new WandHeadItem(new FabricItemSettings()), ItemGroups.INGREDIENTS);
