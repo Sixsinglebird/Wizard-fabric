@@ -6,7 +6,11 @@
     "particle": "wizardfabric:item/wand_head_ice"
   },
   "display": {
-    "scale": [10.0,10.0,10.0]
+    "gui": {
+      "rotation": [30, 225, 0],
+      "translation": [0, 0, 0],
+      "scale": [2.50, 2.5, 2.5]
+    }
   },
   "elements": [
     {
