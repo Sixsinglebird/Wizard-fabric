@@ -1,6 +1,8 @@
 package com.wizardfabric.item;
 
-public class FireWandHeadItem extends HeadItem{
+import net.minecraft.item.Item;
+
+public class FireWandHeadItem extends Item {
     public FireWandHeadItem(Settings settings) {
         super(settings);
     }
